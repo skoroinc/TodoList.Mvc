@@ -7,7 +7,7 @@
 }
 
 @functions{
-    string timeLeftToFromat(TimeSpan timeLeft)
+    string timeLeftToFormat(TimeSpan timeLeft)
     {
         return $"{timeLeft.Hours}ч. {timeLeft.Minutes}м.";
     }
@@ -41,8 +41,8 @@
         </form>
 
         <label class="form-check-label" asp-for="IsCompleted" for="IsCompleted-@Model.Id">@Model.Name</label>
-        <span class="badge text-bd-warning ms-lg-5 @(!isShowTimeLeft ? "d-none" : "")" data-bs-title="Осталось" data-bs-toggle="tooltip">
-            <i class="fa-solid fa-hourglass-half me-2"></i> @timeLeftToFromat(timeLeft)
+        <span class="badge text-bg-warning ms-lg-5 @(!isShowTimeLeft ? "d-none" : "")" data-bs-title="Осталось" data-bs-toggle="tooltip">
+            <i class="fa-solid fa-hourglass-half me-2"></i> @timeLeftToFormat(timeLeft)
         </span>
     </div>
     
@@ -62,7 +62,7 @@
 
         <div
             data-bs-placement="bottom"
-            data-ba-title="@Model.ExpiredDate"
+            data-bs-title="@Model.ExpiredDate"
             data-bs-toggle="tooltip"
             class="text-secondary d-flex align-items-center"
         >
